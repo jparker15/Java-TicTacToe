@@ -22,7 +22,7 @@ public class Main {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Enter your placement (1-9):");
             int playPos = scanner.nextInt();
-            while(playerPositions.contains(playPos) || cpuPositions.contains(playerPositions)){
+            while(playerPositions.contains(playPos) || cpuPositions.contains(playPos)){
                 System.out.println("Position taken! Enter a correct position");
                 playPos = scanner.nextInt();
             }
@@ -35,7 +35,8 @@ public class Main {
 
             Random rand = new Random();
             int cpuPos = rand.nextInt(9) + 1;
-            while(playerPositions.contains(cpuPos) || cpuPositions.contains(cpuPositions)){
+            while(playerPositions.contains(cpuPos) || cpuPositions.contains(cpuPos)){
+                System.out.println("CPU pos taken: " + cpuPos);
                 cpuPos = rand.nextInt(9 ) + 1;
             }
             placePiece(gameBoard,cpuPos,"CPU");
